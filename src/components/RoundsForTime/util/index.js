@@ -1,6 +1,6 @@
-import { getRandomXToY } from './random';
-import { SHORT, MODERATE } from '../constants/durations';
-import { HI, MOD, LO } from '../constants/intensity';
+import { getRandomXToY } from '../../../util/random';
+import { SHORT, MODERATE } from '../../../constants/durations';
+import { HI, MOD, LO } from '../../../constants/intensity';
 
 export const roundsForTime = (duration) => {
   if (typeof duration !== 'string') {
@@ -29,4 +29,4 @@ export const roundsForTime = (duration) => {
   }
 };
 
-export const roundsForTimeTitle = ({ rounds, style, timeDomain }) => `${rounds} ${style}`;
+export const roundsForTimeTitle = ({ rounds, style, time }) => `${rounds} ${style}`;

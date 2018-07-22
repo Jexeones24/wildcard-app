@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import { buildWorkoutObject } from '../../util/buildFullWorkout';
+import { buildWorkoutObject } from './util';
 
 class Workout extends Component {
   constructor() {
     super();
 
     this.state = {
-      timeDomain: 8,
+      time: 8,
       workout: {}
     };
   }
 
-  handleTimeDomainChange = (e) => {
-    this.setState({ timeDomain: e.target.value });
+  handleTimeChange = (e) => {
+    this.setState({ time: e.target.value });
   }
 
   buildWorkout = () => {
-    const timeDomain = Number(this.state.timeDomain);
-    const workout = buildWorkoutObject(timeDomain);
+    const time = Number(this.state.time);
+    const workout = buildWorkoutObject(time);
 
     this.setState({ workout });
   }
@@ -53,8 +53,8 @@ class Workout extends Component {
               type='number'
               min={8}
               max={60}
-              onChange={this.handleTimeDomainChange}
-              value={this.state.timeDomain}
+              onChange={this.handleTimeChange}
+              value={this.state.time}
             />
             <button onClick={this.buildWorkout}>
               NEW WORKOUT

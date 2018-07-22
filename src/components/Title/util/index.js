@@ -1,12 +1,11 @@
-import { amrapTitle } from './amrap';
-import { intervalTitle } from './interval';
-import { roundsForTimeTitle } from './roundsForTime';
-import { chipperTitle } from './forTime';
-import { maxRepsTitle } from './maxReps';
-import { AMRAP, FT, MAX, RFT } from '../constants/workoutStyles';
+import { amrapTitle } from '../../Amrap/util';
+import { intervalTitle } from '../../Interval/util';
+import { roundsForTimeTitle } from '../../RoundsForTime/util';
+import { chipperTitle } from '../../Chipper/util';
+import { maxRepsTitle } from '../../MaxReps/util';
+import { AMRAP, FT, MAX, RFT } from '../../../util/workoutStyle';
 
 export const formattedRepsToString = (formattedReps) => {
-  // console.log(formattedReps);
   if (typeof formattedReps === 'string') { return formattedReps; }
   if (formattedReps.reps === null) {
     return `${formattedReps.movement[0].name}`;

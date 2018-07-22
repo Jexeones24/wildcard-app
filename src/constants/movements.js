@@ -1,7 +1,7 @@
 export const movements = [
   {
     name: 'Snatch',
-    secondsPerRep: 8,
+    secondsPerRep: 6,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -23,7 +23,7 @@ export const movements = [
   },
   {
     name: 'Clean',
-    secondsPerRep: 8,
+    secondsPerRep: 6,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -56,7 +56,7 @@ export const movements = [
   },
   {
     name: 'Hang Snatch',
-    secondsPerRep: 8,
+    secondsPerRep: 6,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -67,7 +67,7 @@ export const movements = [
   },
   {
     name: 'Hang Clean',
-    secondsPerRep: 8,
+    secondsPerRep: 6,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -78,7 +78,7 @@ export const movements = [
   },
   {
     name: 'Hang Power Clean',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -89,7 +89,7 @@ export const movements = [
   },
   {
     name: 'Hang Power Snatch',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 3,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -106,13 +106,13 @@ export const movements = [
   },
   {
     name: 'Squat Jump',
-    secondsPerRep: 4,
+    secondsPerRep: 3,
     skill: 1,
     type: 'bodyweight',
   },
   {
     name: 'Back Squat',
-    secondsPerRep: 8,
+    secondsPerRep: 5,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -123,7 +123,7 @@ export const movements = [
   },
   {
     name: 'Thruster',
-    secondsPerRep: 5,
+    secondsPerRep: 7,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -134,7 +134,7 @@ export const movements = [
   },
   {
     name: 'Front Squat',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -145,7 +145,7 @@ export const movements = [
   },
   {
     name: 'Overhead Squat',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 2,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -162,7 +162,7 @@ export const movements = [
   },
   {
     name: 'Deadlift',
-    secondsPerRep: 4,
+    secondsPerRep: 3,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -173,7 +173,7 @@ export const movements = [
   },
   {
     name: 'Sumo Deadlift High Pull',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -184,13 +184,13 @@ export const movements = [
   },
   {
     name: 'Reverse Lunge',
-    secondsPerRep: 3,
+    secondsPerRep: 2,
     skill: 1,
     type: 'bodyweight',
   },
   {
     name: 'Walking Lunge',
-    secondsPerRep: 3,
+    secondsPerRep: 2,
     skill: 1,
     type: 'bodyweight',
   },
@@ -213,7 +213,7 @@ export const movements = [
   },
   {
     name: 'Strict Press',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -235,7 +235,7 @@ export const movements = [
   },
   {
     name: 'Split Jerk',
-    secondsPerRep: 7,
+    secondsPerRep: 5,
     skill: 2,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -246,7 +246,7 @@ export const movements = [
   },
   {
     name: 'Shoulder to Overhead',
-    secondsPerRep: 7,
+    secondsPerRep: 5,
     skill: 2,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -275,7 +275,7 @@ export const movements = [
   },
   {
     name: 'Back Extension',
-    secondsPerRep: 5,
+    secondsPerRep: 4,
     skill: 1,
     type: 'gymnastics'
   },
@@ -293,7 +293,7 @@ export const movements = [
   },
   {
     name: 'Handstand Pushup',
-    secondsPerRep: 6,
+    secondsPerRep: 4,
     skill: 3,
     type: 'gymnastics'
   },
@@ -311,7 +311,7 @@ export const movements = [
   },
   {
     name: 'Dip',
-    secondsPerRep: 4,
+    secondsPerRep: 3,
     skill: 2,
     type: 'gymnastics'
   },
@@ -323,19 +323,19 @@ export const movements = [
   },
   {
     name: 'Strict Pullup',
-    secondsPerRep: 4,
-    skill: 1,
-    type: 'gymnastics'
-  },
-  {
-    name: 'Pullup',
     secondsPerRep: 3,
     skill: 1,
     type: 'gymnastics'
   },
   {
+    name: 'Pullup',
+    secondsPerRep: 2,
+    skill: 1,
+    type: 'gymnastics'
+  },
+  {
     name: 'Chest-to-Bar Pullup',
-    secondsPerRep: 5,
+    secondsPerRep: 3,
     skill: 2,
     type: 'gymnastics'
   },
@@ -347,7 +347,7 @@ export const movements = [
   },
   {
     name: 'Box Jump',
-    secondsPerRep: 3,
+    secondsPerRep: 4,
     skill: 1,
     type: 'bodyweight',
   },
@@ -369,7 +369,7 @@ export const movements = [
   },
   {
     name: 'Wallball',
-    secondsPerRep: 3,
+    secondsPerRep: 4,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -380,7 +380,7 @@ export const movements = [
   },
   {
     name: 'Ball Slam',
-    secondsPerRep: 3,
+    secondsPerRep: 4,
     skill: 1,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -397,7 +397,7 @@ export const movements = [
   },
   {
     name: 'Ring Muscle Up',
-    secondsPerRep: 8,
+    secondsPerRep: 7,
     skill: 3,
     type: 'gymnastics'
   },
@@ -475,7 +475,7 @@ export const movements = [
   },
   {
     name: 'Tire Flip',
-    secondsPerRep: 8,
+    secondsPerRep: 15,
     skill: 2,
     type: 'weightlifting',
     loadsByIntensity: {
@@ -486,7 +486,7 @@ export const movements = [
   },
   {
     name: 'Goblet Squat',
-    secondsPerRep: 4,
+    secondsPerRep: 3,
     skill: 1,
     type: 'kettlebell',
     loadsByIntensity: {
@@ -497,7 +497,7 @@ export const movements = [
   },
   {
     name: 'KB Snatch',
-    secondsPerRep: 6,
+    secondsPerRep: 4,
     skill: 1,
     type: 'kettlebell',
     loadsByIntensity: {
@@ -519,7 +519,7 @@ export const movements = [
   },
   {
     name: 'DB Deadlift',
-    secondsPerRep: 5,
+    secondsPerRep: 3,
     skill: 1,
     type: 'dumbbell',
     loadsByIntensity: {
@@ -530,7 +530,7 @@ export const movements = [
   },
   {
     name: 'DB Clean',
-    secondsPerRep: 6,
+    secondsPerRep: 4,
     skill: 1,
     type: 'dumbbell',
     loadsByIntensity: {
@@ -547,19 +547,19 @@ export const movements = [
   },
   {
     name: 'Burpee Box Jump',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 1,
     type: 'bodyweight',
   },
   {
     name: 'Burpee Pullup',
-    secondsPerRep: 8,
+    secondsPerRep: 5,
     skill: 2,
     type: 'bodyweight',
   },
   {
     name: 'Burpee Broad Jump',
-    secondsPerRep: 6,
+    secondsPerRep: 5,
     skill: 1,
     type: 'bodyweight',
   },

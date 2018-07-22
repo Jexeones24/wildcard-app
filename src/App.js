@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Workout from './components/Workout';
+import Workout from './containers/Workout';
 import './App.css';
 
 class App extends Component {

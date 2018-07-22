@@ -4,7 +4,7 @@ import { timeInSeconds } from './time';
 import { toNearestTwo, toNearestFive, toNearestTen } from './nearest';
 import { convertRepsToUnits, chooseUnit, calculateDistance } from './units';
 import { movements as allMovements } from '../constants/movements';
-import { AMRAP, FT, RFT, MAX, EMOM, E2MOM } from '../constants/workoutStyles';
+import { AMRAP, FT, RFT, MAX, EMOM, E2MOM } from './workoutStyle';
 import { COUNT_MAP } from './percent';
 import { range } from './range';
 
@@ -14,7 +14,6 @@ const forAmrap = (time, count, movement, idx, percents) => {
   const totalSecs = time * 60;
   const multiplier = percents[idx] / 100;
   const secsPerMovement = Math.round((totalSecs * multiplier) / count);
-  // const reps = toNearestTwo(getRandomXToY(5, 20));
   const reps = Math.floor(secsPerMovement / movement.secondsPerRep);
   const repsToDistance = calculateDistance(movement, reps);
 
@@ -22,7 +21,7 @@ const forAmrap = (time, count, movement, idx, percents) => {
     return repsToDistance;
   }
 
-  return reps;
+  return toNearestFive(reps);
 };
 
 const forInterval = (length, count, movement) => {
@@ -30,7 +29,7 @@ const forInterval = (length, count, movement) => {
   let secondsPerRoundPerMovement;
 
   if (length === EMOM) {
-    totalWorkTime = 60 - 10;
+    totalWorkTime = 60 - 15;
     secondsPerRoundPerMovement = totalWorkTime / count;
     const reps = Math.floor(secondsPerRoundPerMovement / movement.secondsPerRep);
     const repsToDistance = calculateDistance(movement, reps);
@@ -71,7 +70,7 @@ const secsPerRound = (time, rds) => {
   const rest = time * 15;
   const workTime = (time * 60) - rest;
 
-  return Math.floor(workTime / rds);
+  return Math.ceil(workTime / rds);
 };
 
 const perRound = (time, count, rds, movement, idx, percents) => {
@@ -91,18 +90,18 @@ const perRound = (time, count, rds, movement, idx, percents) => {
 
 
 const forChipper = (time, count, movement, idx, intensity, percents) => {
-  const totalSecs = (time * 60);
+  const totalSecs = (time * 60) - (time * 8);
   const multiplier = percents[idx] / 100;
-  const secsPerMovement = Math.ceil((totalSecs * multiplier) / count);
+  const secsPerMovement = (totalSecs * multiplier) / count;
   const reps = Math.ceil(secsPerMovement / movement.secondsPerRep);
   const repsToDistance = calculateDistance(movement, reps);
 
-  debugger;
+  // if intensity high???
   if (repsToDistance) {
     return repsToDistance;
   }
 
-  return toNearestTen(reps);
+  return toNearestFive(reps);
 };
 
 export const getRepsAndLoad = (time, style, count, rds, intervalLength, intensity, movements) => {

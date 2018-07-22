@@ -1,6 +1,6 @@
 import { getRandom } from './random';
 import { weightedMovements } from './types';
-import { formattedRepsToString } from './formatToString';
+import { formattedRepsToString } from '../components/Title/util';
 
 const mapLoadToMovement = (movement, intensity) => {
   const name = movement.name;
