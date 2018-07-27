@@ -361,7 +361,7 @@ export const movements = [
   },
   {
     name: 'Handstand Walk',
-    secondsPerRep: 10,
+    secondsPerRep: 15,
     skill: 3,
     multipliers: { meter: 5 },
     type: 'cardio',
@@ -448,7 +448,7 @@ export const movements = [
   },
   {
     name: 'Waiter Walk',
-    secondsPerRep: 10,
+    secondsPerRep: 15,
     skill: 1,
     multipliers: { meter: 10 },
     units: [ 'meter' ],

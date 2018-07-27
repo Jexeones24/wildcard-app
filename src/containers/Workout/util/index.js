@@ -1,8 +1,8 @@
 import { calculateDuration } from '../../../util/time';
 import { getRandom } from '../../../util/random';
 import { formatReps, getRepsAndLoad } from '../../../util/reps';
-import { getWorkoutStyle, EMOM, E2MOM, E3MOM, INT, RFT } from './workoutStyle';
-import { getMovementCount } from './movementCount';
+import { getWorkoutStyle, EMOM, E2MOM, E3MOM, INT, RFT } from './style';
+import { getWorkoutDetails } from './details';
 import { getMovements } from '../../../util/chooseMovements';
 import { mapLoadToReps } from '../../../util/weightLoad';
 import { movements as allMovements } from '../../../constants/movements';
@@ -12,7 +12,7 @@ import { getWorkoutFormatToString } from '../../../components/Title/util';
 export const buildWorkoutObject = (time) => {
   const duration = calculateDuration(time);
   const style = getWorkoutStyle({ duration, time });
-  const details = getMovementCount(duration, style, time);
+  const details = getWorkoutDetails(duration, style, time);
   const intensity = details.intensity;
   const movementCount = details.movementCount;
   const rounds = style === RFT ? details.rounds : null;

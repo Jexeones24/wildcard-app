@@ -73,11 +73,11 @@ const secsPerRound = (time, rds) => {
   return Math.ceil(workTime / rds);
 };
 
-const perRound = (time, count, rds, movement, idx, percents) => {
+const perRound = (time, rds, movement, idx, percents) => {
   const totalSecondsPerRound = secsPerRound(time, rds);
   const multiplier = percents[idx] / 100;
 
-  const secondsPerRoundPerMovement = Math.round((totalSecondsPerRound * multiplier) / count);
+  const secondsPerRoundPerMovement = Math.round((totalSecondsPerRound * multiplier));
   const reps = Math.floor(secondsPerRoundPerMovement / movement.secondsPerRep);
   const repsToDistance = calculateDistance(movement, reps);
 
@@ -89,10 +89,10 @@ const perRound = (time, count, rds, movement, idx, percents) => {
 };
 
 
-const forChipper = (time, count, movement, idx, intensity, percents) => {
-  const totalSecs = (time * 60) - (time * 8);
+const forChipper = (time, movement, idx, intensity, percents) => {
+  const totalSecs = (time * 60) - (time * 15);
   const multiplier = percents[idx] / 100;
-  const secsPerMovement = (totalSecs * multiplier) / count;
+  const secsPerMovement = (totalSecs * multiplier);
   const reps = Math.ceil(secsPerMovement / movement.secondsPerRep);
   const repsToDistance = calculateDistance(movement, reps);
 
@@ -115,7 +115,7 @@ export const getRepsAndLoad = (time, style, count, rds, intervalLength, intensit
     case FT:
       return {
         loads: assignLoads(movements, intensity),
-        reps: movements.map((movement, idx) => forChipper(time, count, movement, idx, intensity, percents))
+        reps: movements.map((movement, idx) => forChipper(time, movement, idx, intensity, percents))
       };
     case MAX:
       return {
@@ -125,7 +125,7 @@ export const getRepsAndLoad = (time, style, count, rds, intervalLength, intensit
     case RFT:
       return {
         loads: assignLoads(movements, intensity),
-        reps: movements.map((movement, idx) => perRound(time, count, rds, movement, idx, percents))
+        reps: movements.map((movement, idx) => perRound(time, rds, movement, idx, percents))
       };
     case AMRAP:
       return {

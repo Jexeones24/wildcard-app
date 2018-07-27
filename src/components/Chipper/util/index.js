@@ -1,25 +1,16 @@
 import { getRandomXToY } from '../../../util/random';
 import { SHORT, MODERATE } from '../../../constants/durations';
-import { HI, MOD, LO } from '../../../constants/intensity';
+import { INTENSITY_MAP } from '../../../constants/intensity';
 
-export const forTime = (duration) => {
-  switch (duration) {
-    case SHORT:
-      return {
-        intensity: HI,
-        movementCount: getRandomXToY(2, 3),
-      };
-    case MODERATE:
-      return {
-        intensity: MOD,
-        movementCount: getRandomXToY(2, 5),
-      };
-    default:
-      return {
-        intensity: LO,
-        movementCount: getRandomXToY(3, 6),
-      };
-  }
+const counts = {
+  short: getRandomXToY(3, 4),
+  moderate: getRandomXToY(3, 5),
+  long: getRandomXToY(3, 5)
 };
+
+export const buildChipperDetails = (duration) => ({
+  intensity: INTENSITY_MAP[duration],
+  movementCount: counts[duration]
+});
 
 export const chipperTitle = 'For Time';

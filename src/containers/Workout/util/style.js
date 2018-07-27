@@ -1,5 +1,4 @@
 import { getRandom } from '../../../util/random';
-import { SHORT, MODERATE } from '../../../constants/durations';
 import { getIntervalType } from '../../../components/Interval/util';
 
 export const AMRAP = 'AMRAP';
