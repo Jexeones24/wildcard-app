@@ -3,7 +3,7 @@ import { intervalTitle } from '../../Interval/util';
 import { roundsForTimeTitle } from '../../RoundsForTime/util';
 import { chipperTitle } from '../../Chipper/util';
 import { maxRepsTitle } from '../../MaxReps/util';
-import { AMRAP, FT, MAX, RFT } from '../../../util/workoutStyle';
+import { AMRAP, BOOK_ENDS, FT, MAX, RFT } from '../../../util/workoutStyle';
 
 export const formattedRepsToString = (formattedReps) => {
   if (typeof formattedReps === 'string') { return formattedReps; }
@@ -22,6 +22,8 @@ export const getWorkoutFormatToString = (workout) => {
   switch(workout.style) {
     case AMRAP:
       return amrapTitle(workout);
+    case BOOK_ENDS:
+      return chipperTitle;
     case RFT:
       return roundsForTimeTitle(workout);
     case FT:

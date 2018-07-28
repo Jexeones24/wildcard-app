@@ -1,11 +1,10 @@
 import { calculateDuration } from '../../../util/time';
 import { getRandom } from '../../../util/random';
-import { formatReps, getRepsAndLoad } from '../../../util/reps';
-import { getWorkoutStyle, EMOM, E2MOM, E3MOM, INT, RFT } from './style';
+import { formatReps, formatBookEndReps, getRepsAndLoad } from '../../../util/reps';
+import { getWorkoutStyle, BOOK_ENDS, EMOM, E2MOM, E3MOM, RFT } from './style';
 import { getWorkoutDetails } from './details';
 import { getMovements } from '../../../util/chooseMovements';
 import { mapLoadToReps } from '../../../util/weightLoad';
-import { movements as allMovements } from '../../../constants/movements';
 import { titles } from '../../../constants/titles';
 import { getWorkoutFormatToString } from '../../../components/Title/util';
 
@@ -17,17 +16,21 @@ export const buildWorkoutObject = (time) => {
   const movementCount = details.movementCount;
   const rounds = style === RFT ? details.rounds : null;
   const intervalLength = ([EMOM, E2MOM, E3MOM].includes(style)) ? details.length : null;
-  const movements = getMovements(movementCount, allMovements);
+  const movements = getMovements(movementCount);
   const repsAndLoad = getRepsAndLoad(time, style, movementCount, rounds, intervalLength, intensity, movements);
   const loads = repsAndLoad.loads || {};
   const reps = repsAndLoad.reps;
-  const formattedReps = formatReps(reps, movements);
+  const endsMovement = repsAndLoad.endsMovement || {};
+  const endsReps = repsAndLoad.repsForEnds || null;
+  const formattedReps = style === BOOK_ENDS ? formatBookEndReps(reps, movements, endsReps, endsMovement) : formatReps(reps, movements);
   const repsWithLoads = mapLoadToReps(loads, formattedReps);
   const title = getRandom(titles);
   let workout = {};
 
   workout = {
     duration,
+    endsReps,
+    endsMovement,
     formattedReps,
     intensity,
     intervalLength,
@@ -41,6 +44,7 @@ export const buildWorkoutObject = (time) => {
     title,
     time,
   };
+  // console.log(workout);
 
   const workoutFormatToString = getWorkoutFormatToString(workout);
 
