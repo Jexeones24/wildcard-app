@@ -1,13 +1,12 @@
-import { getRandom, getRandomXToY } from '../../../util/random';
+import { getRandom } from '../../../util/random';
 import { INTENSITY_MAP } from '../../../constants/intensity';
 
 const counts = {
-  short: getRandom([2, 3]),
-  moderate: getRandomXToY(2, 4),
+  moderate: getRandom([2, 3]),
   long: getRandom([3, 4])
 };
 
-export const buildAmrapDetails = (duration) => ({
+export const buildBookEndDetails = (duration) => ({
   intensity: INTENSITY_MAP[duration],
   movementCount: counts[duration]
 });
